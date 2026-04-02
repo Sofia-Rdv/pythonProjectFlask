@@ -1,8 +1,4 @@
-from flask import Flask
-
-
-# Создаем объект приложения Flask
-app = Flask(__name__)
+from app import app
 
 
 # --- Задание 1. Простые маршруты ---
@@ -60,8 +56,3 @@ def user_profile(name, age):
 
     except ValueError:
         return "Ошибка: Возраст должен быть целым числом", 400
-
-
-# Запуск приложения
-if __name__ == "__main__":
-    app.run(debug=True)
