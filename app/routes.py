@@ -1,3 +1,4 @@
+from flask import render_template
 from app import app
 
 
@@ -56,3 +57,19 @@ def user_profile(name, age):
 
     except ValueError:
         return "Ошибка: Возраст должен быть целым числом", 400
+
+
+# --- Урок 5. Маршруты с рендерингом HTML ---
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
